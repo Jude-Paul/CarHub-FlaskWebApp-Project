@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+
+
+  <title>Rent Now</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='carfiles/css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap') }}" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static', filename='carfiles/css/font-awesome.min.css') }}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='carfiles/css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='carfiles/css/responsive.css') }}" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CARHUB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      &ensp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Rent Cars</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/rent_cars/1/">Petrol & Deisel</a></li>
+                <li><a class="dropdown-item" href="/rent_cars/2/">Electric</a></li>
+              </ul>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('add_user')}}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('login')}}">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  
+    
+
+
+ <!-- product section -->
+ <section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        <strong>PETROL & DEISEL CARS</strong>
+      </h2>
+    </div>
+
+   		
+    <div class="row">
+      {% for car in cars %}
+      
+      <div class="col-sm-6 col-lg-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename=car.product_img1) }}" alt="">
+            <a href="{{url_for('user_rent', id=car.id)}}" class="add_cart_btn">
+              <span>
+               RENT NOW
+              </span>
+            </a>
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{ car.product_name }}
+              
+            </h5>
+            <form method="POST">
+
+              <input type="number" size="5" min="0" value="1">
+              
+
+              <a href="{{url_for('user_rent', id=car.id)}}"><button type="submit" class="btn btn-dark">Rent Now</button></a>
+
+              </form>
+            <div class="product_info">
+              <h5>
+                <span>₹</span> {{ car.price }}
+              </h5>
+              <div class="star_container">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    {% endfor%}
+    <h1>{{cars.price}}</h1>
+  </div>
+    <div class="btn_box">
+      <a href="/rent_cars/2/" class="view_more-link">
+        View More
+      </a>
+    </div>
+  </div>
+</section>
+
+ 
+  <!-- end product section -->
+  <!-- end product section -->
+
+
+  
+
+  <!-- jQery -->
+  <script src="{{ url_for('static', filename='carfiles/js/jquery-3.4.1.min.js') }}"></script>
+  <!-- bootstrap js -->
+  <script src="{{ url_for('static', filename='carfiles/js/bootstrap.js') }}"></script>
+  <!-- custom js -->
+  <script src="{{ url_for('static', filename='carfiles/js/custom.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

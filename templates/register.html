@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Create Account</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename='logincreatefiles/css/style.css') }}">
+
+	</head>
+	{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+	<ul class="nav justify-content-end">
+		<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="{{ url_for('add_user')}}" style="color: #E5E1E6">Create Account</a>
+		  </li>
+		<li class="nav-item">
+		  <a class="nav-link active" aria-current="page" href="/login" style="color: #E5E1E6">Login</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="/" style="color: #E5E1E6">Home</a>
+		</li>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="color: #E5E1E6">Rent Cars</a>
+			<ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="/rent_cars/1/" >Petrol & Deisel</a></li>
+			  <li><a class="dropdown-item" href="/rent_cars/2/" >Electric</a></li>
+			</ul>
+		  </li>
+	  </ul>
+	<body class="img js-fullheight" style="background-image: url(/static/logincreatefiles/images/bg.jpg);">
+	<section class="ftco-section">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">CREATE ACCOUNT</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Have an account?</h3>
+		      	<form method="POST" class="signin-form">
+		      		<div class="form-group">
+						{{ form.hidden_tag() }}
+						  {{ form.name(class="form-control", placeholder="Name") }} 
+		      		</div>
+					  <div class="form-group">
+						{{ form.hidden_tag() }}
+						  {{ form.username(class="form-control", placeholder="Username") }} 
+		      		</div>
+					  <div class="form-group">
+						{{ form.hidden_tag() }}
+						  {{ form.email(class="form-control", placeholder="Email", type="email") }} 
+		      		</div>
+					
+	            <div class="form-group">
+				  {{ form.password_hash(class="form-control", placeholder="Password") }}
+	              
+	            </div>
+				<div class="form-group">
+					{{ form.password_hash2(class="form-control", placeholder="Confirm Password") }}
+					
+				  </div>
+				  <div class="form-group">
+					<tr>
+				  {% for subfield in form.user_type %}
+				  
+						<td>{{ subfield }}</td>
+						<td>{{ subfield.label }}</td>
+				
+				  {% endfor %}
+				</tr>
+				</div>
+
+	            <div class="form-group">
+					{{ form.submit(class="form-control btn btn-primary submit px-3") }}
+	            </div>
+
+	          </form>
+	          <br\>
+			  <br\>
+			  
+	          
+		      </div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	
+	
+	<script src="/logincreatefiles/static/js/jquery.min.js"></script>
+  <script src="/logincreatefiles/static/js/popper.js"></script>
+  <script src="/logincreatefiles/static/js/bootstrap.min.js"></script>
+  <script src="/logincreatefiles/static/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	</body>
+</html>
+

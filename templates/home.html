@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="static/carfiles/static/carfiles/images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>CAR HUB</title>
+
+
+  <!-- bootstrap core css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="static/carfiles/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="static/carfiles/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="static/carfiles/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="static/carfiles/css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CARHUB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      &ensp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Rent Cars</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/rent_cars/1/">Petrol & Deisel</a></li>
+                <li><a class="dropdown-item" href="/rent_cars/2/">Electric</a></li>
+              </ul>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('add_user')}}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('login')}}">Login</a>
+          </li>
+          {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('logout')}}">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/{{current_user.user_type}}/dashboard">Dashboard</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  
+    
+
+  <div class="hero_area">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      WELCOME TO CAR HUB
+                    </h1>
+                    <p>
+                      New Rental Car.Book in latest model for your economic car rental online.Enjoy the feeling of driving a new car booking through CARHUB website
+                    </p>
+                    <a href="">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="static/carfiles/images/INDEX IMG 5.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                     WELCOME TO CAR HUB
+                    </h1>
+                    <p>
+                      New Rental Car.Book in latest model for your economic car rental online.Enjoy the feeling of driving a new car booking through CARHUB website
+                    </p>
+                    <a href="">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="static/carfiles/images/INDEX IMG 4.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      WELCOME TO CAR HUB
+                    </h1>
+                    <p>
+                      New Rental Car.Book in latest model for your economic car rental online.Enjoy the feeling of driving a new car booking through  CARHUB website 
+                    </p>
+                    <a href="">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="static/carfiles/images/supra.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn_box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+ <!-- product section -->
+ <section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        <strong>PETROL & DEISEL CARS</strong>
+      </h2>
+    </div>
+
+   		
+    <div class="row">
+      {% for car in cars %}
+      
+      <div class="col-sm-6 col-lg-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename=car.product_img1) }}" alt="">
+            <a href="{{url_for('user_rent', id=car.id)}}" class="add_cart_btn">
+              <span>
+               RENT NOW
+              </span>
+            </a>
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{ car.product_name }}
+              
+            </h5>
+            
+
+              <input type="number" size="5" min="0" value="1">
+              
+
+              <a href="{{url_for('user_rent', id=car.id)}}"><button type="submit" class="btn btn-dark">Rent Now</button></a>
+
+              
+            <div class="product_info">
+              <h5>
+                <span>₹</span> {{ car.price }}
+              </h5>
+              <div class="star_container">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    {% endfor%}
+    <h1>{{cars.price}}</h1>
+  </div>
+    <div class="btn_box">
+      <a href="/rent_cars/2/" class="view_more-link">
+        View More
+      </a>
+    </div>
+  </div>
+</section>
+
+ 
+  <!-- end product section -->
+
+
+ 
+
+
+
+  <!-- jQery -->
+  <script src="static/carfiles/js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="static/carfiles/js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="static/carfiles/js/custom.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
